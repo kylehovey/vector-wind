@@ -19,6 +19,7 @@ The goal of this project is to create a wind-like vector field like the ones fou
   - (knows):
     - particle count
     - falloff
+    - die-off value for particles
     - center coordinates (vector space units)
     - window size (vector space units)
     - vector map (R2 -> R2)
