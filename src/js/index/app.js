@@ -19,7 +19,7 @@ class App {
         b : 152
       },
       epsilon : 0.001,
-      falloff : 0.95,
+      falloff : 0.9,
       fade : 0.1,
       ageProbability : 0.4,
       killPoint : 20,
