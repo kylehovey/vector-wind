@@ -133,7 +133,7 @@ class VectorField extends DrawingBoard {
 
         // Move vector
         x += Vx * this._parameters.epsilon;
-        y -= Vy * this._parameters.epsilon;
+        y += Vy * this._parameters.epsilon;
 
         // Update location
         particle.location = { x, y };
