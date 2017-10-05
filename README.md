@@ -1,7 +1,7 @@
 # Vector Wind
 An HTML5 canvas utility for visualizing vector fields inspired from [this Reddit post](https://www.reddit.com/r/math/comments/73mtdr/meeting_point_of_a_vector_field_vy_y_cosy/).
 
-An example can be found [here](https://kylehovey.github.io/vectorwind/) on my site. Equations can be entered using JavaScript syntax (plain eval is used) and the width of the window can also be modified.
+An example can be found [here](https://kylehovey.github.io/vectorwind/index.html) on my site. Equations can be entered using JavaScript syntax (plain eval is used) and the width of the window can also be modified.
 
 ## About
 The goal of this project is to create a wind-like vector field like the ones found on [Windy](https://windy.com).
