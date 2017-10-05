@@ -50,6 +50,17 @@ class DrawingBoard {
   }
 
   /**
+   * Get a random point from within our coordinate space
+   * @return {Array}
+   */
+  getRandomPoint() {
+    return [
+      _.random(-this._parameters.width/2, this._parameters.width/2, true),
+      _.random(-this._parameters.height/2, this._parameters.height/2, true)
+    ];
+  }
+
+  /**
    * Given some [x, y] from the origin, determine location pixel-wise
    * @param {Number} x Horizontal coordinate (coordinate space)
    * @param {Number} y Vertical coordinate (coordinate space)
@@ -60,8 +71,8 @@ class DrawingBoard {
     const [ cX, cY ] = this._pixelCenter;
 
     return [
-      cX + x / this._parameters.unitsPerPixel,
-      cY - y / this._parameters.unitsPerPixel
+      Math.round(cX + x / this._parameters.unitsPerPixel),
+      Math.round(cY - y / this._parameters.unitsPerPixel)
     ];
   }
 

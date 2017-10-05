@@ -14,9 +14,9 @@ class App {
         b : 228
       },
       backgroundColor : {
-        r : 34,
-        g : 133,
-        b : 181
+        r : 24,
+        g : 97,
+        b : 152
       },
       epsilon : 0.01,
       falloff : 0.9,

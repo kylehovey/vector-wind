@@ -41,19 +41,28 @@ class VectorField extends DrawingBoard {
   }
 
   /**
+   * Generate a new particle
+   * @return {Particle}
+   */
+  _createParticle() {
+    // Get a random point
+    const [ x, y ] = this.getRandomPoint();
+
+    // Construct and return particle
+    return new Particle({
+      location : { x, y },
+      intensity : 1
+    });
+  }
+
+  /**
    * Populate the particle field
    */
   populate() {
     // TODO
     this._particles = _
       .range(this._parameters.particleCount)
-      .map(x => new Particle({
-        location : {
-          x : 0,
-          y : 0
-        },
-        intensity : 1
-      }));
+      .map(discard => this._createParticle());
   }
 
   /**
@@ -86,6 +95,21 @@ class VectorField extends DrawingBoard {
   drawParticles() {
     // Draw the background
     this._drawBackground();
+
+    // Draw the particles
+    this._particles
+      .forEach(particle => {
+        const { x, y} = particle.location;
+        this.drawParticle(x, y, `rgba(${
+          this._parameters.particleColor.r
+        }, ${
+          this._parameters.particleColor.g
+        }, ${
+          this._parameters.particleColor.b
+        }, ${
+          particle.intensity
+        })`);
+      });
   }
 
   /**
