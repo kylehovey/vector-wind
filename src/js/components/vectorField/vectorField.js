@@ -61,7 +61,7 @@ class VectorField extends DrawingBoard {
     // Construct and return particle
     return new Particle({
       location : { x, y },
-      intensity : 100
+      intensity : _.random(0, 100, true)
     });
   }
 
@@ -133,7 +133,7 @@ class VectorField extends DrawingBoard {
 
         // Move vector
         x += Vx * this._parameters.epsilon;
-        y += Vy * this._parameters.epsilon;
+        y -= Vy * this._parameters.epsilon;
 
         // Update location
         particle.location = { x, y };
