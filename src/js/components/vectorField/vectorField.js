@@ -42,6 +42,15 @@ class VectorField extends DrawingBoard {
   }
 
   /**
+   * Set the width of the window in coordinate space
+   * @parameter {Number} width Width in coordinate space
+   */
+  setWidth(width) {
+    this._parameters.width = width;
+    this.resize();
+  }
+
+  /**
    * Generate a new particle
    * @return {Particle}
    */
