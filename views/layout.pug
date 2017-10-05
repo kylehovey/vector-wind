@@ -2,22 +2,22 @@ doctype html
 html
   head
     title=title
-    link(rel='stylesheet', href='/style/main.css')
-    link(rel='stylesheet', href='/style/external/bootstrap.min.css')
-    link(rel='stylesheet', href='/style/external/sweetalert.min.css')
+    link(rel='stylesheet', href='./style/main.css')
+    link(rel='stylesheet', href='./style/external/bootstrap.min.css')
+    link(rel='stylesheet', href='./style/external/sweetalert.min.css')
   body
     block content
     block externalScripts
-      script(src="/js/external/polyfill.min.js")
-      script(src="/js/external/lodash.min.js")
-      script(src="/js/external/jquery.min.js")
-      script(src="/js/external/bootstrap.min.js")
-      script(src="/js/external/sweetalert.min.js")
+      script(src="./js/external/polyfill.min.js")
+      script(src="./js/external/lodash.min.js")
+      script(src="./js/external/jquery.min.js")
+      script(src="./js/external/bootstrap.min.js")
+      script(src="./js/external/sweetalert.min.js")
     block components
       // Drawing Board
-      script(src="/js/app/components/drawingBoard/drawingBoard.js")
+      script(src="./js/app/components/drawingBoard/drawingBoard.js")
       // Particle
-      script(src="/js/app/components/particle/particle.js")
+      script(src="./js/app/components/particle/particle.js")
       // Vector Field
-      script(src="/js/app/components/vectorField/vectorField.js")
+      script(src="./js/app/components/vectorField/vectorField.js")
     block userScripts
