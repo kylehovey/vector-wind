@@ -8,8 +8,8 @@ class DrawingBoard {
    *  (height in coordinate space is calculated based upon aspect ratio)
    */
   constructor(options) {
-    // Store copy of options
-    this._parameters = JSON.parse(JSON.stringify(options));
+    // Store options
+    this._parameters = options;
 
     // Get canvas
     [ this._canvas ] = $(`#${this._parameters.canvasId}`);

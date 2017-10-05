@@ -14,5 +14,5 @@ $(() => {
    */
   setInterval(() => {
     app.vectorField.progress();
-  }, 100);
+  }, 1);
 });

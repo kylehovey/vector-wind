@@ -7,7 +7,7 @@ class App {
       width : 1,
 
       /* ===== Vector Field Options ===== */
-      particleCount : 1000,
+      particleCount : 4000,
       particleColor : {
         r : 102,
         g : 198,
@@ -18,11 +18,12 @@ class App {
         g : 97,
         b : 152
       },
-      epsilon : 0.01,
-      falloff : 0.9,
+      epsilon : 0.001,
+      falloff : 0.95,
       fade : 0.1,
-      killPoint : 0.01,
-      vectorMap : (x, y) => [y, -x]
+      ageProbability : 0.4,
+      killPoint : 20,
+      vectorMap : (x, y) => [-5 * y,  5 * y * Math.cos(y)]
     });
   }
 };

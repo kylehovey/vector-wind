@@ -12,6 +12,7 @@ class VectorField extends DrawingBoard {
    * @param {Number} falloff Particle intensity multiplier (happens each cycle)
    *  (should be between 0 and 1)
    * @param {Number} fade Alpha value of color drawn over canvas each cycle
+   * @param {Number} ageProbability Probability that a particle will fade each cycle
    * @param {Number} options.killpoint Particle intensity that corresponds
    *  to death
    * @param {Function} options.vectorMap Given (x, y), return an Array
@@ -51,7 +52,7 @@ class VectorField extends DrawingBoard {
     // Construct and return particle
     return new Particle({
       location : { x, y },
-      intensity : 1
+      intensity : 100
     });
   }
 
@@ -59,7 +60,6 @@ class VectorField extends DrawingBoard {
    * Populate the particle field
    */
   populate() {
-    // TODO
     this._particles = _
       .range(this._parameters.particleCount)
       .map(discard => this._createParticle());
@@ -107,7 +107,7 @@ class VectorField extends DrawingBoard {
         }, ${
           this._parameters.particleColor.b
         }, ${
-          particle.intensity
+          particle.intensity / 100
         })`);
       });
   }
@@ -116,7 +116,31 @@ class VectorField extends DrawingBoard {
    * Advance one step further
    */
   progress() {
-    // TODO
+    this._particles = this._particles.map(particle => {
+      if (particle.intensity > this._parameters.killPoint) {
+        // Find vector at particle location
+        let { x, y } = particle.location;
+        const [ Vx, Vy ] = this._parameters.vectorMap(x, y);
+
+        // Move vector
+        x += Vx * this._parameters.epsilon;
+        y += Vy * this._parameters.epsilon;
+
+        // Update location
+        particle.location = { x, y };
+
+        // Diminish particle
+        if (_.random(0, 1, true) > this._parameters.ageProbability) {
+          particle.diminish(this._parameters.falloff);
+        }
+
+        return particle;
+      } else {
+        return this._createParticle();
+      }
+    });
+
+    // Draw particles
     this.drawParticles();
   }
 };
