@@ -1,8 +1,7 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  canvas(width="100%", height="100%", id="vector-canvas")
 append userScripts
   script(src="/js/app/index/app.js")
   script(src="/js/app/index/main.js")
