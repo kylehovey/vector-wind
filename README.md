@@ -18,7 +18,8 @@ This project uses some boilerplate code I maintain in [another repository](https
 2. Install `gulp`
 3. Clone this repository
 4. `cd` into the repo and run `npm install`
-5. Run the app using `npm start` then navigate to [http://localhost:3000](http://localhost:3000) to view the app
+5. Run `gulp` to compile the JavaScript and CSS (outputs in `public`)
+6. Run the app using `npm start` then navigate to [http://localhost:3000](http://localhost:3000) to view the app
 
 All code that is unique to this project is located in `src`. The code you would probably want to change is inside of `src/js`. All components of the app are defined in `src/js/components`. When in doubt, just open a dev console on the home page and play around with the global `app` object. It contains the `VectorField` instance that will have methods for changing the field parameters.
 
