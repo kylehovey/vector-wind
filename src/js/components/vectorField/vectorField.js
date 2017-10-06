@@ -42,6 +42,14 @@ class VectorField extends DrawingBoard {
   }
 
   /**
+   * Overloaded resize function to accomodate for redrawing vector field
+   */
+  resize() {
+    super.resize();
+    this._drawBackground(1);
+  }
+
+  /**
    * Set the width of the window in coordinate space
    * @parameter {Number} width Width in coordinate space
    */
