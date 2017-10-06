@@ -9,14 +9,14 @@ class App {
       /* ===== Vector Field Options ===== */
       particleCount : 5000,
       particleColor : {
-        r : 102,
-        g : 198,
-        b : 228
+        r : 87,
+        g : 170,
+        b : 226
       },
       backgroundColor : {
-        r : 24,
-        g : 97,
-        b : 152
+        r : 19,
+        g : 80,
+        b : 111
       },
       epsilon : 0.002,
       falloff : 0.97,
