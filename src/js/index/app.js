@@ -4,7 +4,7 @@ class App {
       /* ==== Drawing Board Options ===== */
       canvasId : "vector-canvas",
       center : [0, 0],
-      width : 1,
+      width : 15,
 
       /* ===== Vector Field Options ===== */
       particleCount : 5000,
@@ -18,12 +18,12 @@ class App {
         g : 97,
         b : 152
       },
-      epsilon : 0.001,
-      falloff : 0.95,
-      fade : 0.1,
-      ageProbability : 0.3,
-      killPoint : 10,
-      vectorMap : (x, y) => [-5 * y,  5 * y * Math.cos(y)]
+      epsilon : 0.002,
+      falloff : 0.97,
+      fade : 0.05,
+      ageProbability : 0.8,
+      killPoint : 15,
+      vectorMap : (x,y) => [10*Math.cos(x)*Math.sin(y), 10*Math.sin(x)*Math.cos(y)] 
     });
   }
 };

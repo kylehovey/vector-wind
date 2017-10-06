@@ -61,6 +61,17 @@ class DrawingBoard {
   }
 
   /**
+   * Determine whether a point is within the bounds of the window
+   * @param {Number} x Horizontal position (coordinate space)
+   * @param {Number} y Vertical position (coordinate space)
+   * @return {Boolean}
+   */
+  isWithin(x, y) {
+    return x > -this._parameters.width/2 && x < this._parameters.width/2 &&
+      y > -this._parameters.height/2 && y < this._parameters.height/2
+  }
+
+  /**
    * Given some [x, y] from the origin, determine location pixel-wise
    * @param {Number} x Horizontal coordinate (coordinate space)
    * @param {Number} y Vertical coordinate (coordinate space)

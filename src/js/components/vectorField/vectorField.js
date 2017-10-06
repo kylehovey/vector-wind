@@ -126,9 +126,11 @@ class VectorField extends DrawingBoard {
    */
   progress() {
     this._particles = this._particles.map(particle => {
-      if (particle.intensity > this._parameters.killPoint) {
+      // Get particle location
+      let { x, y } = particle.location;
+
+      if (particle.intensity > this._parameters.killPoint && this.isWithin(x, y)) {
         // Find vector at particle location
-        let { x, y } = particle.location;
         const [ Vx, Vy ] = this._parameters.vectorMap(x, y);
 
         // Move vector
@@ -139,7 +141,7 @@ class VectorField extends DrawingBoard {
         particle.location = { x, y };
 
         // Diminish particle
-        if (_.random(0, 1, true) > this._parameters.ageProbability) {
+        if (_.random(0, 1, true) < this._parameters.ageProbability) {
           particle.diminish(this._parameters.falloff);
         }
 
