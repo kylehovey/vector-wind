@@ -23,7 +23,10 @@ class App {
       fade : 0.05,
       ageProbability : 0.8,
       killPoint : 15,
-      vectorMap : (x,y) => [10*Math.cos(x)*Math.sin(y), 10*Math.sin(x)*Math.cos(y)] 
+      vectorMap : (x,y) => [
+        Math.cos(x)*Math.sin(y) + Math.cos(y),
+        Math.sin(x)*Math.cos(y) + Math.sin(x)
+      ].map(x => 10*x) 
     });
   }
 };
