@@ -2,17 +2,19 @@ class VectorField extends DrawingBoard {
   /**
    * Construct a VectorField
    * @param {Object} options object
-   * @param {Number} options.particleCount Amount of particles to have alive at
-   *  any given time
+   * @param {Number} options.particleCount Amount of particles to have
+   *  alive at any given time
    * @param {Object} options.particleColor Color of wind particles
    *  (uses { r, g, b } structure)
    * @param {Object} options.backgroundColor Color of background
    *  (uses { r, g, b } structure)
    * @param {Number} epsilon Differential unit used for Euler's Method
-   * @param {Number} falloff Particle intensity multiplier (happens each cycle)
+   * @param {Number} falloff Particle intensity multiplier
+   *  (happens each cycle)
    *  (should be between 0 and 1)
    * @param {Number} fade Alpha value of color drawn over canvas each cycle
-   * @param {Number} ageProbability Probability that a particle will fade each cycle
+   * @param {Number} ageProbability Probability that a particle will 
+   *   fade each cycle
    * @param {Number} options.killpoint Particle intensity that corresponds
    *  to death
    * @param {Function} options.vectorMap Given (x, y), return an Array
